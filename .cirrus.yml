@@ -6,7 +6,7 @@ task:
   name: "---Compile Rom--"
   timeout_in: 4h
   container:
-      image: ubuntu:20.04
+      image: snaxpsycho/snaxpsycho:test
       cpu: 8
       memory: 32G
       stateful: true
@@ -21,7 +21,9 @@ task:
     - cat $CIRRUS_WORKING_DIR/setup
 
   setup_cmd_script:
-    - bash setup
+    - cd ~/scripts
+    - sudo bash setup/android_build_env.sh
+    - cd ~
 
   sync_script:
     - set -e
