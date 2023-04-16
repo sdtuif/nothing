@@ -3,7 +3,8 @@ env:
     BUILD_HOSTNAME: "cirrus-ci.org"
 
 task:
-  name: "---Compile Rom--"
+  name: "••Compile Rom••"
+  skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 4h
   container:
       image: snaxpsycho/snaxpsycho:test
