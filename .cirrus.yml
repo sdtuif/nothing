@@ -2,7 +2,32 @@ env:
     CIRRUS_CLONE_DEPTH: 1
     BUILD_HOSTNAME: "cirrus-ci.org"
     rom_name: Nusantara
-    DEVICE: lavender
+    device: lavender
+    bot_api: "ENCRYPTED[!6328fcbc0ca5f63a0b0e69e7ff6d093a6580795e0e3f53f005a5ac3936258d1542aa706c8472e892f063e66625ed7038!]"
+
+task:
+  name: "Started"
+  timeout_in: 5m
+  container:
+      image: snaxpsycho/snaxpsycho:test
+      cpu: 2
+      memory: 4G
+      stateful: true
+      greedy: true
+
+notify_script:
+    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
+    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
+    - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
+    - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
+    - your_telegram_id=@testing00078
+    - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
+    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
+      
+      https://cirrus-ci.com/build/$CIRRUS_BUILD_ID
+      
+      $show" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
+
 
 task:
   name: "Compile Rom"
