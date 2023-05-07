@@ -17,7 +17,7 @@ task:
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> has been started successfully.
       
-      Build Status: <a href="https://cirrus-ci.com/build/$CIRRUS_BUILD_ID">Click Here</a>" -d "chat_id=1278600516" -d "parse_mode=HTML"
+      [button 1](buttonurl://example.com) Build Status: https://cirrus-ci.com/build/$CIRRUS_BUILD_ID" -d "chat_id=1278600516" -d "parse_mode=HTML"
 
 task:
   name: "Compile Rom"
