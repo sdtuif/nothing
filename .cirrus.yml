@@ -18,7 +18,7 @@ task:
     - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
     - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
     - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
-    - your_telegram_id=@sa_sajjad_2
+    - your_telegram_id=1278600516
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Build started
       
