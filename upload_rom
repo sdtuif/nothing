@@ -1,17 +1,13 @@
 echo "== Uploading =="
 set -e
-rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-rom_name=$rom_name-$branch_name
-device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 cd ~/roms/$rom_name
 cd out/target/product/$device
 ls -lh
 pwd
 chmod 777 *
-curl --upload-file $(echo Nusantara*.zip) https://transfer.sh | tee link.txt && echo " "
+curl --upload-file $(echo $rom_name*.zip) https://transfer.sh | tee link.txt && echo " "
 echo " "
-echo "=== Build Uploaded! ==="
+echo "=== Rom Uploaded! ==="
 echo " = Please see the link Below = "
 echo "----------------------------"
 cat link.txt && echo " "
