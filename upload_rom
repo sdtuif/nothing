@@ -1,6 +1,6 @@
 echo "== Uploading =="
 set -e
-cd ~/roms/$rom_name
+cd ~/$rom_name
 cd out/target/product/$device
 ls -lh
 pwd
