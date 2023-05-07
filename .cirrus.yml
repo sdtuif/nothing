@@ -15,7 +15,7 @@ task:
           
   notify_script:
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=❚█══ 𝔹𝕦𝕚𝕝𝕕 𝕊𝕥𝕒𝕣𝕥𝕖𝕕 ══█❚
+    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=◦•●◉✿ 𝔹𝕦𝕚𝕝𝕕 𝕊𝕥𝕒𝕣𝕥𝕖𝕕 ✿◉●•◦
       
       
       $device-$rom_name has been started successfully.
@@ -24,7 +24,7 @@ task:
       <a href='https://cirrus-ci.com/build/$CIRRUS_BUILD_ID'>Click here to see status</a>
       
       
-      ▁ ▂ ▃ ▅ ▆ ▇ █ by Sã Śâjjãd █ ▇ ▆ ▅ ▃ ▂ ▁" -d "chat_id=1278600516" -d "parse_mode=HTML"
+      ◦•●◉✿ by Sã Śâjjãd ✿◉●•◦" -d "chat_id=1278600516" -d "parse_mode=HTML"
       
 task:
   name: "Compile Rom"
@@ -101,11 +101,11 @@ task:
           
   notify_script:
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=❚█══ 🅑🅤🅘🅛🅓 🅢🅤🅒🅒🅔🅔🅓 ══█❚
-    
+    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=◦•●◉✿ 🅑🅤🅘🅛🅓 🅢🅤🅒🅒🅔🅔🅓 ✿◉●•◦
       
       $device-$rom_name has been build successful.
       
+      <a href='https://cirrus-ci.com/build/$CIRRUS_BUILD_ID'>Click here to see status</a>
       
-      <a href='https://cirrus-ci.com/build/$CIRRUS_BUILD_ID'>Click here to see status</a>" -d "chat_id=1278600516" -d "parse_mode=HTML"
+      ◦•●◉✿ by Sã Śâjjãd ✿◉●•◦" -d "chat_id=1278600516" -d "parse_mode=HTML"
       
