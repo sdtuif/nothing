@@ -6,8 +6,8 @@ env:
     bot_api: "ENCRYPTED[!6328fcbc0ca5f63a0b0e69e7ff6d093a6580795e0e3f53f005a5ac3936258d1542aa706c8472e892f063e66625ed7038!]"
 
 task:
-  name: "Started"
-  timeout_in: 5m
+  name: "Notifier"
+  timeout_in: 2m
   container:
       image: snaxpsycho/snaxpsycho:test
       cpu: 2
