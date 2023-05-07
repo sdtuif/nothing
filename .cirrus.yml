@@ -103,9 +103,12 @@ task:
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=◦•●◉✿ 🅑🅤🅘🅛🅓 🅢🅤🅒🅒🅔🅔🅓 ✿◉●•◦
       
+      
       $device-$rom_name has been build successful.
       
+      
       <a href='https://cirrus-ci.com/build/$CIRRUS_BUILD_ID'>Click here to see status</a>
+      
       
       ◦•●◉✿ by Sã Śâjjãd ✿◉●•◦" -d "chat_id=1278600516" -d "parse_mode=HTML"
       
