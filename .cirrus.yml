@@ -3,8 +3,6 @@ env:
     BUILD_HOSTNAME: "cirrus-ci.org"
     rom_name: Nusantara
     device: lavender
-    enter:  
-    
     bot_api: "ENCRYPTED[!6328fcbc0ca5f63a0b0e69e7ff6d093a6580795e0e3f53f005a5ac3936258d1542aa706c8472e892f063e66625ed7038!]"
 
 task:
@@ -17,7 +15,7 @@ task:
           
   notify_script:
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> has been started successfully. $enter <a href='https://cirrus-ci.com/build/$CIRRUS_BUILD_ID'>Click here to see status</a>" -d "chat_id=1278600516" -d "parse_mode=HTML"
+    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> has been started successfully. <pre> <a href='https://cirrus-ci.com/build/$CIRRUS_BUILD_ID'>Click here to see status</a> </pre>" -d "chat_id=1278600516" -d "parse_mode=HTML"
       
 task:
   name: "Compile Rom"
