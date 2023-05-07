@@ -15,9 +15,7 @@ task:
           
   notify_script:
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> has been started successfully. 
-    
-    <a href='https://cirrus-ci.com/build/$CIRRUS_BUILD_ID'>Click here to see status</a>" -d "chat_id=1278600516" -d "parse_mode=HTML"
+    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> has been started successfully. \n/n <a href='https://cirrus-ci.com/build/$CIRRUS_BUILD_ID'>Click here to see status</a>" -d "chat_id=1278600516" -d "parse_mode=HTML"
       
 task:
   name: "Compile Rom"
