@@ -15,7 +15,7 @@ task:
           
   notify_script:
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> has been started successfully. \n <a href='https://www.google.com/'>Google</a>
+    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> has been started successfully. <a href='https://cirrus-ci.com/build/$CIRRUS_BUILD_ID'>Status</a>
       
       https://cirrus-ci.com/build/$CIRRUS_BUILD_ID" -d "chat_id=1278600516" -d "parse_mode=HTML"
       
@@ -94,7 +94,7 @@ task:
           
   notify_script:
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> has been successful.
+    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> has been build successful.
       
       https://cirrus-ci.com/build/$CIRRUS_BUILD_ID" -d "chat_id=1278600516" -d "parse_mode=HTML"
       
