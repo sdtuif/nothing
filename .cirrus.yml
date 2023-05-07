@@ -12,6 +12,13 @@ task:
       image: snaxpsycho/snaxpsycho:test
       cpu: 2
       memory: 4G
+      stateful: true
+      greedy: true
+      volumes:
+          - /home/cirrus:/home/cirrus
+          - /home/cirrus/ccache:/home/cirrus/ccache
+          - /home/cirrus/.config:/home/cirrus/.config
+          
 notify_script:
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
