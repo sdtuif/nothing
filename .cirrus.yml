@@ -14,11 +14,10 @@ task:
       memory: 4G
           
   notify_script:
-    - your_telegram_id=1278600516
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Build started
+    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> has been started successfully.
       
-      https://cirrus-ci.com/build/$CIRRUS_BUILD_ID" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
+      Build Status: <a href="https://cirrus-ci.com/build/$CIRRUS_BUILD_ID">Click Here</a>" -d "chat_id=1278600516" -d "parse_mode=HTML"
 
 task:
   name: "Compile Rom"
@@ -85,3 +84,17 @@ task:
     - cd ~/$rom_name
     - rm -rf out/target/product/$device
 
+task:
+  name: "success"
+  timeout_in: 2m
+  container:
+      image: snaxpsycho/snaxpsycho:test
+      cpu: 2
+      memory: 4G
+          
+  notify_script:
+    - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
+    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> has been successful.
+      
+      https://cirrus-ci.com/build/$CIRRUS_BUILD_ID" -d "chat_id=1278600516" -d "parse_mode=HTML"
+      
