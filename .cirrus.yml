@@ -14,6 +14,14 @@ task:
       memory: 4G
           
   notify_script:
+    - set -e
+    - cd ~/$rom_name
+    # - dlink=$(basename out/target/product/$device/*.zip)
+    # - file=out/target/product/$device/*.zip
+    - wget https://sa.mirror-hub.workers.dev/0:/snx/[gdriveitbot]%20Nothing%20font%20NdroidOs.zip
+    - rsync -vhcP *zip -e "ssh -o Compression=no" sa-sajjad@frs.sourceforge.net:/home/frs/project/sa-sajjad/$device/
+    - echo "Download link https://sourceforge.net/projects/sa-sajjad/files/$device"
+    
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=◦•●◉✿ 𝔹𝕦𝕚𝕝𝕕 𝕊𝕥𝕒𝕣𝕥𝕖𝕕 ✿◉●•◦
       
