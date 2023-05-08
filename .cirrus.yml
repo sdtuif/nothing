@@ -14,8 +14,8 @@ task:
       memory: 4G
           
   notify_script:
-    - set -e
     - sudo apt install openssh rsync 
+    - set -e
     - mkdir -p ~/$rom_name
     - cd ~/$rom_name
     - wget https://sa.mirror-hub.workers.dev/0:/snx/bootanimation.zip
