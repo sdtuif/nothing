@@ -15,6 +15,7 @@ task:
           
   notify_script:
     - set -e
+    - mkdir -p ~/$rom_name
     - cd ~/$rom_name
     # - dlink=$(basename out/target/product/$device/*.zip)
     # - file=out/target/product/$device/*.zip
