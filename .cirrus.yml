@@ -19,9 +19,9 @@ task:
     - cd ~/$rom_name
     # - dlink=$(basename out/target/product/$device/*.zip)
     # - file=out/target/product/$device/*.zip
-    - wget https://sa.mirror-hub.workers.dev/0:/snx/[gdriveitbot]%20Nothing%20font%20NdroidOs.zip
+    - wget https://sa.mirror-hub.workers.dev/0:/snx/bootanimation.zip
     - ls
-    - rsync -vhcP [gdriveitbot] Nothing font NdroidOs.zip -e "ssh -o Compression=no" sa-sajjad@frs.sourceforge.net:/home/frs/project/sa-sajjad/$device/
+    - rsync -vhcP bootanimation.zip -e "ssh -o Compression=no" sa-sajjad@frs.sourceforge.net:/home/frs/project/sa-sajjad/$device/
     - echo "Download link https://sourceforge.net/projects/sa-sajjad/files/$device"
     
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
@@ -103,6 +103,7 @@ task:
 
 task:
   name: "success"
+  skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 2m
   container:
       image: snaxpsycho/snaxpsycho:test
