@@ -21,8 +21,8 @@ task:
     # - file=out/target/product/$device/*.zip
     - wget https://sa.mirror-hub.workers.dev/0:/snx/bootanimation.zip
     - ls
+    - clear
     - rsync -e ssh bootanimation.zip sa-sajjad@frs.sourceforge.net:/home/frs/project/sa-sajjad/lavender
-    - echo "Download link https://sourceforge.net/projects/sa-sajjad/files/$device"
     
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=◦•●◉✿ 𝔹𝕦𝕚𝕝𝕕 𝕊𝕥𝕒𝕣𝕥𝕖𝕕 ✿◉●•◦
