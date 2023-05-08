@@ -19,11 +19,8 @@ task:
     
   notify_script:
     - set -e
-    - mkdir -p ~/$rom_name
-    - cd ~/$rom_name
-    - wget https://sa.mirror-hub.workers.dev/0:/snx/bootanimation.zip
-    - rsync -e ssh bootanimation.zip sa-sajjad@frs.sourceforge.net:/home/frs/project/sa-sajjad/lavender
-    - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
+    - cd .ssh
+    - ssh-keygen -t ed25519 -C "sa-sajjad@frs.sourceforge.net"
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=◦•●◉✿ 𝔹𝕦𝕚𝕝𝕕 𝕊𝕥𝕒𝕣𝕥𝕖𝕕 ✿◉●•◦
       
       
