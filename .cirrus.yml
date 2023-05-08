@@ -15,15 +15,11 @@ task:
           
   notify_script:
     - set -e
+    - sudo apt update -y && sudo apt install openssh rsync 
     - mkdir -p ~/$rom_name
     - cd ~/$rom_name
-    # - dlink=$(basename out/target/product/$device/*.zip) 
-    # - file=out/target/product/$device/*.zip
     - wget https://sa.mirror-hub.workers.dev/0:/snx/bootanimation.zip
-    - ls
-    - clear
     - rsync -e ssh bootanimation.zip sa-sajjad@frs.sourceforge.net:/home/frs/project/sa-sajjad/lavender
-    
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=◦•●◉✿ 𝔹𝕦𝕚𝕝𝕕 𝕊𝕥𝕒𝕣𝕥𝕖𝕕 ✿◉●•◦
       
