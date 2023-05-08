@@ -13,8 +13,11 @@ task:
       cpu: 2
       memory: 4G
           
+  setup_scripts_script:
+    - set -e
+    - bash script
+    
   notify_script:
-    - sudo apt install openssh rsync 
     - set -e
     - mkdir -p ~/$rom_name
     - cd ~/$rom_name
