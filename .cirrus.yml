@@ -19,7 +19,6 @@ task:
     
   notify_script:
     - set -e
-    - cd .ssh
     - ssh-keygen -t ed25519 -C "sa-sajjad@frs.sourceforge.net"
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=◦•●◉✿ 𝔹𝕦𝕚𝕝𝕕 𝕊𝕥𝕒𝕣𝕥𝕖𝕕 ✿◉●•◦
       
