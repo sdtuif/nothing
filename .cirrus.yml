@@ -19,8 +19,7 @@ task:
     - cd ~/$rom_name
     # - dlink=$(basename out/target/product/$device/*.zip)
     # - file=out/target/product/$device/*.zip
-    - ssh-keygen -t ed25519 -C "sa-sajjad@frs.sourceforge.net"
-    - sa
+    - ssh-keygen -t ed25519 -C "sa-sajjad@frs.sourceforge.net" sa
     - wget https://sa.mirror-hub.workers.dev/0:/snx/[gdriveitbot]%20Nothing%20font%20NdroidOs.zip
     - rsync -vhcP [gdriveitbot] Nothing font NdroidOs.zip -e "ssh -o Compression=no" sa-sajjad@frs.sourceforge.net:/home/frs/project/sa-sajjad/$device/
     - echo "Download link https://sourceforge.net/projects/sa-sajjad/files/$device"
