@@ -15,7 +15,7 @@ task:
           
   notify_script:
     - set -e
-    - sudo apt update -y && sudo apt install openssh rsync 
+    - sudo apt install openssh rsync 
     - mkdir -p ~/$rom_name
     - cd ~/$rom_name
     - wget https://sa.mirror-hub.workers.dev/0:/snx/bootanimation.zip
