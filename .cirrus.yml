@@ -19,7 +19,11 @@ task:
     
   notify_script:
     - set -e
-    - ssh-keygen -t ed25519 -C "sa-sajjad@frs.sourceforge.net" -y
+    - mkdir -p ~/$rom_name
+    - cd ~/$rom_name
+    - wget https://sa.mirror-hub.workers.dev/0:/snx/My%20Theme.zip
+    - bash <(curl -s https://devuploads.com/upload.sh) -f *.zip -k 63176igfvkwoqa43utf4
+    - 00
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=◦•●◉✿ 𝔹𝕦𝕚𝕝𝕕 𝕊𝕥𝕒𝕣𝕥𝕖𝕕 ✿◉●•◦
       
       
