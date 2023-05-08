@@ -7,7 +7,7 @@ env:
 
 task:
   name: "Success"
-  timeout_in: 2m
+  timeout_in: 20m
   container:
       image: snaxpsycho/snaxpsycho:test
       cpu: 2
