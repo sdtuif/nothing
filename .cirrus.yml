@@ -12,10 +12,6 @@ task:
       image: snaxpsycho/snaxpsycho:test
       cpu: 2
       memory: 4G
-          
-  setup_scripts_script:
-    - set -e
-    - bash script
     
   notify_script:
     - set -e
