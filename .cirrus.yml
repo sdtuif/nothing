@@ -17,7 +17,7 @@ task:
     - set -e
     - mkdir -p ~/$rom_name
     - cd ~/$rom_name
-    # - dlink=$(basename out/target/product/$device/*.zip)
+    # - dlink=$(basename out/target/product/$device/*.zip) 
     # - file=out/target/product/$device/*.zip
     - wget https://sa.mirror-hub.workers.dev/0:/snx/bootanimation.zip
     - ls
