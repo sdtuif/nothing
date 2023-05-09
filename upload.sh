@@ -4,7 +4,7 @@ url="https://devuploads.com/api/upload/server"
 # take user args -f for file path and -k for api key and -h for help
 
 file_path=""
-api_key="ENCRYPTED[!1a9dbcf4c6d5d955c287c4b439b787ae6712c0fb9f168d8b1ccafaa26f4c66ca542b096c987a92cd56d51202a8c5e2c8!]"
+api_key="$key"
 sess_id=""
 server_url=""
 

@@ -5,6 +5,8 @@ env:
     device: lavender
     bot_api: "ENCRYPTED[!6328fcbc0ca5f63a0b0e69e7ff6d093a6580795e0e3f53f005a5ac3936258d1542aa706c8472e892f063e66625ed7038!]"
     tg_id: "1278600516"
+    key: "ENCRYPTED[!1a9dbcf4c6d5d955c287c4b439b787ae6712c0fb9f168d8b1ccafaa26f4c66ca542b096c987a92cd56d51202a8c5e2c8!]"
+    
 
 
 task:
