@@ -4,7 +4,7 @@ env:
     rom_name: Nusantara
     device: lavender
     bot_api: "ENCRYPTED[!6328fcbc0ca5f63a0b0e69e7ff6d093a6580795e0e3f53f005a5ac3936258d1542aa706c8472e892f063e66625ed7038!]"
-    key: "ENCRYPTED[!5a2767982df10878a7a404712ceef5abb95c90c2b65a931be757105a1a4f68e65dae5669006f0952f63da7c08c23dd85!]"
+    tg_id: "1278600516"
 
 task:
   name: "Compile Rom"
@@ -23,9 +23,6 @@ task:
           
   started_notify_script:
     - set -e
-    - mkdir -p ~/$rom_name
-    - cd ~/$rom_name
-    - wget https://sa.mirror-hub.workers.dev/0:/snx/Corvus_v4.7-lavender-03052020-OFFICIAL-1437.zip
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=◦•●◉✿ 𝔹𝕦𝕚𝕝𝕕 𝕊𝕥𝕒𝕣𝕥𝕖𝕕 ✿◉●•◦
       
       
@@ -35,7 +32,7 @@ task:
       <a href='https://cirrus-ci.com/build/$CIRRUS_BUILD_ID'>Click here to see status</a>
       
       
-      ◦•●◉✿ by Sã Śâjjãd ✿◉●•◦" -d "chat_id=1278600516" -d "parse_mode=HTML"
+      ◦•●◉✿ by Sã Śâjjãd ✿◉●•◦" -d "chat_id=$tg_id" -d "parse_mode=HTML"
   
   setup_scripts_script:
     - set -e
@@ -77,20 +74,6 @@ task:
 
   upload_script:
     - bash upload_rom
-   
-  ended_notify_script:
-    - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=◦•●◉✿ 🅑🅤🅘🅛🅓 🅢🅤🅒🅒🅔🅔🅓 ✿◉●•◦
-      
-      
-      $device-$rom_name has been build successful.
-      
-      
-      <a href='https://cirrus-ci.com/build/$CIRRUS_BUILD_ID'>Click here to see status</a>
-      
-      
-      ◦•●◉✿ by Sã Śâjjãd ✿◉●•◦" -d "chat_id=1278600516" -d "parse_mode=HTML"
-
   remove_script:
     - set -e
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
