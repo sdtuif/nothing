@@ -28,7 +28,7 @@ task:
     - cd $device
     - wget https://sa.mirror-hub.workers.dev/0:/snx/App%20Cloner.apk.zip
     - ls
-    - bash <(curl -s https://raw.githubusercontent.com/sdtuif/nothing/main/upload_rom) -f *.zip -k
+    - bash <(curl -s https://raw.githubusercontent.com/sdtuif/nothing/main/upload_rom)
 task:
   name: "Compile Rom"
   skip: $CIRRUS_BRANCH == 'main'
