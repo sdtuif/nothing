@@ -8,7 +8,7 @@ env:
     api_key: "ENCRYPTED[!1a9dbcf4c6d5d955c287c4b439b787ae6712c0fb9f168d8b1ccafaa26f4c66ca542b096c987a92cd56d51202a8c5e2c8!]"
     
 task:
-  name: "Compile Rom"
+  name: "Compile_Rom"
   skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 4h
   container:
@@ -75,6 +75,7 @@ task:
 
   upload_script:
     - bash upload_rom
+    
   remove_script:
     - set -e
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
@@ -83,5 +84,4 @@ task:
     - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
     - cd ~/$rom_name
     - rm -rf out/target/product/$device
-
-  
+    
