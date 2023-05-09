@@ -4,34 +4,8 @@ env:
     rom_name: Nusantara
     device: lavender
     bot_api: "ENCRYPTED[!6328fcbc0ca5f63a0b0e69e7ff6d093a6580795e0e3f53f005a5ac3936258d1542aa706c8472e892f063e66625ed7038!]"
-    tg_id: "1278600516"
+    tg_id: "ENCRYPTED[!e3b68a256e9462626b1a8f6488f747b7acae1b357d54ee9ce7c02f8ba1854e30e0ae41e995a22dae4deab89232765ef0!]"
     api_key: "ENCRYPTED[!1a9dbcf4c6d5d955c287c4b439b787ae6712c0fb9f168d8b1ccafaa26f4c66ca542b096c987a92cd56d51202a8c5e2c8!]"
-    
-
-
-task:
-  name: "test"
-  timeout_in: 20m
-  container:
-      image: snaxpsycho/snaxpsycho:test
-      cpu: 2
-      memory: 4G
-  test_script:
-    - set -e
-    - mkdir -p ~/$rom_name
-    - cd ~/$rom_name
-    - mkdir -p out
-    - cd out
-    - mkdir -p target
-    - cd target
-    - mkdir -p product
-    - cd product
-    - mkdir -p $device
-    - cd $device
-    - wget https://sa.mirror-hub.workers.dev/0:/snx/MiUi-Dream_Project_lavender_V11.0.2.0.QFGCNXM_10.zip
-    
-  upload_script:
-    - bash upload_rom
     
 task:
   name: "Compile Rom"
