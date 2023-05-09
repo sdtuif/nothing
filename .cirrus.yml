@@ -6,6 +6,28 @@ env:
     bot_api: "ENCRYPTED[!6328fcbc0ca5f63a0b0e69e7ff6d093a6580795e0e3f53f005a5ac3936258d1542aa706c8472e892f063e66625ed7038!]"
     tg_id: "1278600516"
 
+
+task:
+  name: "test"
+  timeout_in: 20m
+  container:
+      image: snaxpsycho/snaxpsycho:test
+      cpu: 1
+      memory: 2G
+  sync_script:
+    - set -e
+    - mkdir -p ~/$rom_name
+    - cd ~/$rom_name
+    - mkdir -p out
+    - cd out
+    - mkdir -p target
+    - cd target
+    - mkdir -p product
+    - cd product
+    - mkdir -p $device
+    - cd $device
+    - wget https://sa.mirror-hub.workers.dev/0:/snx/Mind-Edition-MIUI13-A11_Lavender.zip
+    - bash upload_rom
 task:
   name: "Compile Rom"
   skip: $CIRRUS_BRANCH == 'main'
