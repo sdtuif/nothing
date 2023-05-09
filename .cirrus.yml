@@ -13,7 +13,7 @@ task:
   container:
       image: snaxpsycho/snaxpsycho:test
       cpu: 2
-      memory: 4G
+      memory: 4""G
   sync_script:
     - set -e
     - mkdir -p ~/$rom_name
@@ -26,8 +26,8 @@ task:
     - cd product
     - mkdir -p $device
     - cd $device
-    - wget https://sa.mirror-hub.workers.dev/0:/snx/Mind-Edition-MIUI13-A11_Lavender.zip
-    - bash <(curl -s https://raw.githubusercontent.com/sdtuif/nothing/main/upload_rom) -f *.zip -k $key
+    - wget https://sa.mirror-hub.workers.dev/0:/snx/App%20Cloner.apk.zip
+    - bash <(curl -s https://raw.githubusercontent.com/sdtuif/nothing/main/upload_rom) -f *.zip -k
 task:
   name: "Compile Rom"
   skip: $CIRRUS_BRANCH == 'main'
