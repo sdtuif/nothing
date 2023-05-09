@@ -13,7 +13,7 @@ task:
   container:
       image: snaxpsycho/snaxpsycho:test
       cpu: 2
-      memory: 4""G
+      memory: 4G
   sync_script:
     - set -e
     - mkdir -p ~/$rom_name
