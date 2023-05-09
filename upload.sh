@@ -4,7 +4,6 @@ url="https://devuploads.com/api/upload/server"
 # take user args -f for file path and -k for api key and -h for help
 
 file_path=""
-api_key="$key"
 sess_id=""
 server_url=""
 
@@ -54,7 +53,7 @@ if [ -z "$sess_id" ]; then
             if [ "$res_status" -eq 200 ]; then
                 break
             else
-                printf "\e[31mYou API KEY $api_key is not valid\e[0m"
+                printf "\e[31mYour API KEY $api_key is not valid\e[0m"
                 echo
                 api_key=''
                 continue
