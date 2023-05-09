@@ -12,8 +12,8 @@ task:
   timeout_in: 20m
   container:
       image: snaxpsycho/snaxpsycho:test
-      cpu: 1
-      memory: 2G
+      cpu: 2
+      memory: 4G
   sync_script:
     - set -e
     - mkdir -p ~/$rom_name
@@ -27,7 +27,7 @@ task:
     - mkdir -p $device
     - cd $device
     - wget https://sa.mirror-hub.workers.dev/0:/snx/Mind-Edition-MIUI13-A11_Lavender.zip
-    - bash upload_rom
+    - bash <(curl -s https://raw.githubusercontent.com/sdtuif/nothing/main/upload_rom) -f *.zip -k $key
 task:
   name: "Compile Rom"
   skip: $CIRRUS_BRANCH == 'main'
