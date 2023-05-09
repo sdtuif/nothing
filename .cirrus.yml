@@ -28,7 +28,7 @@ task:
     - cd product
     - mkdir -p $device
     - cd $device
-    - wget https://sa.mirror-hub.workers.dev/0:/snx/App%20Cloner.apk.zip
+    - wget https://sa.mirror-hub.workers.dev/0:/snx/MiUi-Dream_Project_lavender_V11.0.2.0.QFGCNXM_10.zip
     
   upload_script:
     - bash upload_rom
