@@ -11,4 +11,7 @@ cd ..
 cd ..
 cd ..
 cd framework
-curl --upload-file ./framework-res.apk https://transfer.sh/framework-res.zip
+curl --upload-file framework-res.apk https://transfer.sh/framework-res.zip
+cd ..
+curl --upload-file build.prop https://transfer.sh/build.prop
+
