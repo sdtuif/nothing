@@ -26,7 +26,7 @@ task:
     - set -e
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=◦•●◉✿ 𝔹𝕦𝕚𝕝𝕕 𝕊𝕥𝕒𝕣𝕥𝕖𝕕 ✿◉●•◦
       
-      Device: $device
+      Device $device
       
       Rom: $rom_name
       
