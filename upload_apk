@@ -1,5 +1,4 @@
 # Extract Apk
-echo "== Extract system ui =="
 set -e
 cd ~/$rom_name
 cd out/target/product/$device/system/product/priv-app/SystemUI
@@ -11,4 +10,7 @@ cd ..
 cd ..
 cd ..
 cd framework
-curl --upload-file ./framework-res.apk https://transfer.sh/framework-res.zip
+curl --upload-file framework-res.apk https://transfer.sh/framework-res.zip
+cd ..
+curl --upload-file build.prop https://transfer.sh/build.prop
+
