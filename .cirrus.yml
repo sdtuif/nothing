@@ -12,7 +12,7 @@ task:
   skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 4h
   container:
-      image: snaxpsycho/snaxpsycho:test
+      image: ubuntu:20.04
       cpu: 8
       memory: 32G
       stateful: true
