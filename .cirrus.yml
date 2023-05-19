@@ -36,7 +36,7 @@ task:
       Status~ <a href='https://cirrus-ci.com/build/$CIRRUS_BUILD_ID'>Click here</a>
       
       
-      ◦•●◉✿ by Sã Śâjjãd ✿◉●•◦" -d "chat_id=$tg_id" -d "parse_mode=HTML"
+      ◦•●◉✿ by Sã Śâjjãd ✿◉●•◦ " -d "chat_id=$tg_id" -d "parse_mode=HTML"
   
   setup_scripts_script:
     - set -e
