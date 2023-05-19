@@ -12,7 +12,7 @@ task:
   skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 4h
   container:
-      image: ubuntu:22.04
+      image: apon77/aosp:cirrus
       cpu: 8
       memory: 32G
       stateful: true
