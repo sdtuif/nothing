@@ -1,4 +1,3 @@
-# Extract Apk
 set -e
 cd ~/$rom_name
 cd out/target/product/$device/system/product/priv-app/SystemUI
