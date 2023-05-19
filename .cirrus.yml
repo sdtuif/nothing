@@ -12,7 +12,7 @@ task:
   skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 4h
   container:
-      image: snaxpsycho/snaxpsycho:test
+      image: ubuntu:latest
       cpu: 8
       memory: 32G
       stateful: true
@@ -22,6 +22,10 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
+  setup_scripts_script:
+    - set -e
+    - bash script
+
   started_notify_script:
     - set -e
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=◦•●◉✿ 𝔹𝕦𝕚𝕝𝕕 𝕊𝕥𝕒𝕣𝕥𝕖𝕕 ✿◉●•◦
@@ -38,10 +42,6 @@ task:
       
       ◦•●◉✿ by Sã Śâjjãd ✿◉●•◦ " -d "chat_id=$tg_id" -d "parse_mode=HTML"
   
-  setup_scripts_script:
-    - set -e
-    - bash script
-
   sync_script:
     - set -e
     - mkdir -p ~/$rom_name
